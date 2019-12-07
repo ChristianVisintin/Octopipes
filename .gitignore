@@ -92,5 +92,6 @@ _deps
 *-prefix/
 
 .DS_Store
+.vscode/
 
 # End of https://www.gitignore.io/api/c,c++,cmake
