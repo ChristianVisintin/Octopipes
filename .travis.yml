@@ -14,5 +14,5 @@ matrix:
       script:
         - cmake .. && make
         - make
-        - make install
-        - ./test_parser && ./test_pipes -t pipe_tx -r pipe_rx
+        - make install DESTDIR=./out/
+        - ./test_parser
