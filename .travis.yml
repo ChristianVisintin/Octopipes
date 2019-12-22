@@ -1,6 +1,6 @@
 jobs:
   include:
-    - 
+    - stage: "liboctopipes-linux"
       language: c
       dist: trusty
       compiler: gcc
@@ -17,16 +17,16 @@ jobs:
         - make
         - make install DESTDIR=./out/
         - ./test_parser
-  - 
-    language: c
-    os: windows
-    compiler: gcc
-    before_script:
-      - cd libs/liboctopipes/
-      - mkdir build/
-      - cd build/
-    script:
-      - cmake ..
-      - make
-      - make install DESTDIR=out
-      - test_parser.exe
+    - stage: "liboctopipes-minGW"
+      language: c
+      os: windows
+      compiler: gcc
+      before_script:
+        - cd libs/liboctopipes/
+        - mkdir build/
+        - cd build/
+      script:
+        - cmake ..
+        - make
+        - make install DESTDIR=out
+        - test_parser.exe
