@@ -12,7 +12,7 @@ Currently under development
 
 - [Octopipes](#octopipes)
   - [Introduction](#introduction)
-  - [Supporte platforms and Requirements](#supporte-platforms-and-requirements)
+  - [Supported platforms and Requirements](#supported-platforms-and-requirements)
     - [Server Requirements](#server-requirements)
     - [Client libraries](#client-libraries)
   - [How it works](#how-it-works)
@@ -37,7 +37,7 @@ These are the main features Octopipes provides:
 - Message exchanging between individual processes and groups
 - Free data format
 
-## Supporte platforms and Requirements
+## Supported platforms and Requirements
 
 Supported Operating Systems:
 
@@ -55,7 +55,7 @@ Supported Operating Systems:
 |----------|----------------|--------------------------------------|-----------------------------------|
 | C        | liboctopipes   | C compiler (GNU gcc, Clang), CMake   | GNU Linux, MacOS, Windows (MinGW) |
 | C++      | liboctopipespp | C++ compiler (GNU g++, Clang), CMake | GNU Linux, MacOS, Windows (MinGW) |
-| Rust     | crabpipes      | rustc, cargo                         | GNU Linux, MacOS, Windows         |
+| Rust     | rustypipes     | rustc, cargo                         | GNU Linux, MacOS, Windows         |
 
 ## How it works
 
