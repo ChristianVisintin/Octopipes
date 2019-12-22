@@ -1,0 +1,18 @@
+matrix:
+  include:
+    - language: c
+      dist: trusty
+      compiler: gcc
+      apt:
+        sources:
+          - ubuntu-toolchain-r-test
+        packages:
+          - gcc-7
+          - cmake
+      before_script:
+        - cd libs/liboctopipes/ && mkdir build/ && cd build/
+      script:
+        - cmake .. && make
+        - make
+        - make install
+        - ./test_parser && ./test_pipes -t pipe_tx -r pipe_rx
