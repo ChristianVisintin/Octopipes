@@ -17,6 +17,8 @@ jobs:
         - make
         - make install DESTDIR=./out/
         - ./test_parser
+      after_success:
+        - bash <(curl -s https://codecov.io/bash)
     - stage: "liboctopipes-minGW"
       language: c
       os: windows
@@ -27,6 +29,6 @@ jobs:
         - cd build/
       script:
         - cmake ..
-        - make
-        - make install DESTDIR=out
+        - cmake --build .
+        - cmake --install . DESTDIR=out
         - test_parser.exe
