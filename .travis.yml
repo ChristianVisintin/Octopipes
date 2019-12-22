@@ -1,14 +1,15 @@
-matrix:
+jobs:
   include:
-    - language: c
+    - 
+      language: c
       dist: trusty
       compiler: gcc
-      apt:
-        sources:
-          - ubuntu-toolchain-r-test
-        packages:
-          - gcc-7
-          - cmake
+      os: linux
+      sources:
+        - ubuntu-toolchain-r-test
+      packages:
+        - gcc-7
+        - cmake
       before_script:
         - cd libs/liboctopipes/ && mkdir build/ && cd build/
       script:
@@ -16,7 +17,8 @@ matrix:
         - make
         - make install DESTDIR=./out/
         - ./test_parser
-  - language: c
+  - 
+    language: c
     os: windows
     compiler: gcc
     before_script:
