@@ -26,3 +26,14 @@ jobs:
         - cmake .. -G "MinGW Makefiles" -DCMAKE_SH="CMAKE_SH-NOTFOUND"
         - mingw32-make
         - ./test_parser.exe
+    - stage: "liboctopipespp-linux"
+      language: cpp
+      dist: trusty
+      compiler: g++
+      os: linux
+      before_script:
+        - cd libs/liboctopipespp/ && mkdir build/ && cd build/
+      script:
+        - cmake ..
+        - make
+        - make install DESTDIR=./out/
