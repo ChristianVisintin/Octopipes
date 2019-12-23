@@ -51,11 +51,11 @@ Supported Operating Systems:
 
 ### Client libraries
 
-| Language | Library        | Requirements                         | Supported Platforms               |
-|----------|----------------|--------------------------------------|-----------------------------------|
-| C        | liboctopipes   | C compiler (GNU gcc, Clang), CMake   | GNU Linux, MacOS, Windows (MinGW) |
-| C++      | liboctopipespp | C++ compiler (GNU g++, Clang), CMake | GNU Linux, MacOS, Windows (MinGW) |
-| Rust     | rustypipes     | rustc, cargo                         | GNU Linux, MacOS, Windows         |
+| Language | Library        | Requirements                         | Supported Platforms                           | Repository                                     |
+|----------|----------------|--------------------------------------|-----------------------------------------------|------------------------------------------------|
+| C        | liboctopipes   | C compiler (GNU gcc, Clang), CMake   | GNU Linux, MacOS, Windows (MinGW **not yet**) | <https://github.com/ChristianVisintin/Octopipes> |
+| C++      | liboctopipespp | C++ compiler (GNU g++, Clang), CMake | GNU Linux, MacOS, Windows (MinGW **not yet**) | <https://github.com/ChristianVisintin/Octopipes> |
+| Rust     | rustypipes     | rustc, cargo                         | GNU Linux, MacOS, Windows                     | <https://github.com/ChristianVisintin/Octopipes> |
 
 ## How it works
 
