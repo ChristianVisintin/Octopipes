@@ -25,4 +25,4 @@ jobs:
       script:
         - cmake .. -G "MinGW Makefiles" -DCMAKE_SH="CMAKE_SH-NOTFOUND"
         - mingw32-make
-        - C:\Users\travis\build\ChristianVisintin\Octopipes\libs\liboctopipes\build\test_parser.exe
+        - ./test_parser.exe
