@@ -28,7 +28,6 @@ jobs:
         - mkdir build/
         - cd build/
       script:
-        - cmake ..
-        - cmake --build .
-        - cmake --install . --prefix out
+        - cmake .. -G "MinGW Makefiles"
+        - mingw32-make
         - test_parser.exe
