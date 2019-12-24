@@ -39,7 +39,7 @@ jobs:
         - make
         - make install DESTDIR=./out/
         - ./test_parserpp
-        - ./test_clientpp
+        - ./test_clientpp -t /tmp/pipecpp_tx -r /tmp/pipecpp_rx -c /tmp/pipecpp_cap
       after_success:
         - bash <(curl -s https://codecov.io/bash)
     - stage: "liboctopipespp-minGW"
