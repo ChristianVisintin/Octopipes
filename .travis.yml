@@ -37,3 +37,18 @@ jobs:
         - cmake ..
         - make
         - make install DESTDIR=./out/
+        - ./test_parserpp
+      after_success:
+        - bash <(curl -s https://codecov.io/bash)
+    - stage: "liboctopipespp-minGW"
+      language: cpp
+      os: windows
+      compiler: g++
+      before_script:
+        - cd libs/liboctopipespp/
+        - mkdir build/
+        - cd build/
+      script:
+        - cmake .. -G "MinGW Makefiles" -DCMAKE_SH="CMAKE_SH-NOTFOUND"
+        - mingw32-make
+        - ./test_parserpp.exe
