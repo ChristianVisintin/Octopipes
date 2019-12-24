@@ -1,5 +1,14 @@
 jobs:
   include:
+    - stage: "rustypipes"
+      language: rust
+      rust:
+        - stable
+      cache: cargo
+      script:
+        - cd libs/rustypipes/
+        - cargo build --verbose --all
+        - cargo test --verbose --all
     - stage: "liboctopipes-linux"
       language: c
       dist: trusty
