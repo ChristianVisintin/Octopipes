@@ -21,8 +21,13 @@ Currently under development
     - [The IPC Step](#the-ipc-step)
     - [The Unsubscribption Step](#the-unsubscribption-step)
     - [Entire lifecycle](#entire-lifecycle)
+  - [Build](#build)
+    - [liboctopipes](#liboctopipes)
+    - [liboctopipespp](#liboctopipespp)
+    - [rustypipes](#rustypipes)
   - [Client implementation](#client-implementation)
     - [C Client Implementation](#c-client-implementation)
+    - [C++ Client Implementation](#c-client-implementation)
   - [Octopipes Protocol](#octopipes-protocol)
     - [Payload Syntax](#payload-syntax)
     - [Common Access Pipe Protocol](#common-access-pipe-protocol)
@@ -139,6 +144,37 @@ So let's explain this with an example
 18. Octopipes deletes foo from its subscription records and its TX and RX pipes.
 19. foo terminates
 
+## Build
+
+### liboctopipes
+
+```sh
+cd libs/liboctopipes/
+mkdir build/
+cd build/
+cmake ..
+make
+make install
+```
+
+### liboctopipespp
+
+```sh
+cd libs/liboctopipespp/
+mkdir build/
+cd build/
+cmake ..
+make
+make install
+```
+
+### rustypipes
+
+```sh
+cargo build
+cargo install
+```
+
 ## Client implementation
 
 ### C Client Implementation
@@ -216,6 +252,68 @@ octopipes_cleanup(client);
 ```
 
 Two clients implementation can be found in and are provided with liboctopipes [Here](https://github.com/ChristianVisintin/Octopipes/tree/master/libs/liboctopipes/clients)
+
+### C++ Client Implementation
+
+Dependencies:
+
+- pthread
+- liboctopipespp
+
+Initialize the client
+
+```cpp
+octopipes::Client* client = new octopipes::Client(clientId, capPipe, octopipes::ProtocolVersion::VERSION_1);
+```
+
+Set callbacks (optional)
+
+```cpp
+client->setReceive_errorCB(on_receive_error);
+client->setReceivedCB(on_received);
+client->setSubscribedCB(on_subscribed);
+client->setUnsubscribedCB(on_unsubscribed);
+```
+
+Subscribe to server
+
+```cpp
+if ((ret = client->subscribe(groups, cap_error)) != octopipes::Error::SUCCESS) {
+  //Handle error
+}
+```
+
+Start loop (after that you will start receiving messages through the on_received callback):
+
+```cpp
+if ((ret = client->startLoop() != octopipes::Error::SUCCESS) {
+  //Handle error
+}
+```
+
+Send messages
+
+```cpp
+if ((ret = client->send(remote, data, data_size)) != octopipes::Error::SUCCESS) {
+  //Handle error
+}
+```
+
+Unsubscribe
+
+```cpp
+if ((ret = client->unsubscribe()) != octopipes::Error::SUCCESS) {
+  //Handle error
+}
+```
+
+Free resources
+
+```cpp
+delete client;
+```
+
+Two clients implementation can be found in and are provided with liboctopipes [Here](https://github.com/ChristianVisintin/Octopipes/tree/master/libs/liboctopipespp/tests/client/)
 
 ## Octopipes Protocol
 
