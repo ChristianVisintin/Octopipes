@@ -212,7 +212,7 @@ if ((rc = octopipes_unsubscribe(client)) != OCTOPIPES_ERROR_SUCCESS) {
 Free resources
 
 ```c
-octopipes_cleanup(message);
+octopipes_cleanup(client);
 ```
 
 Two clients implementation can be found in and are provided with liboctopipes [Here](https://github.com/ChristianVisintin/Octopipes/tree/master/libs/liboctopipes/clients)
