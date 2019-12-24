@@ -12,6 +12,7 @@ jobs:
         - make
         - make install DESTDIR=./out/
         - ./test_parser
+        - ./test_client -t /tmp/pipe_tx -r /tmp/pipe_rx -c /tmp/pipe_cap
       after_success:
         - bash <(curl -s https://codecov.io/bash)
     - stage: "liboctopipes-minGW"
