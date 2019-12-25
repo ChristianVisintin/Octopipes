@@ -2,8 +2,7 @@ jobs:
   include:
     - stage: "rustypipes"
       language: rust
-      rust:
-        - stable
+      rust: stable
       cache: cargo
       script:
         - cd libs/rustypipes/
