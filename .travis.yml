@@ -7,7 +7,7 @@ jobs:
       script:
         - cd libs/rustypipes/
         - cargo build --verbose --all
-        - cargo test --verbose --all
+        - cargo test --verbose --all -- --nocapture
       deploy:
         on:
           tags: true
