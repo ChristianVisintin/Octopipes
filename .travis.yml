@@ -4,10 +4,17 @@ jobs:
       language: rust
       rust: stable
       cache: cargo
+      before_install:
+        - curl -L https://github.com/mozilla/grcov/releases/latest/download/grcov-linux-x86_64.tar.bz2 | tar jxf -
       script:
         - cd libs/rustypipes/
+        - export RUSTFLAGS="-Zprofile -Ccodegen-units=1 -Cinline-threshold=0 -Clink-dead-code -Coverflow-checks=off -Zno-landing-pads"
         - cargo build --verbose --all
         - cargo test --verbose --all -- --nocapture
+        - export CARGO_INCREMENTAL=0
+        - zip -0 ccov.zip `find . \( -name "YOUR_PROJECT_NAME*.gc*" \) -print`;
+        - ./grcov ccov.zip -s . -t lcov --llvm --branch --ignore-not-existing --ignore "/*" -o lcov.info;
+        - bash <(curl -s https://codecov.io/bash) -f lcov.info;
       deploy:
         on:
           tags: true
