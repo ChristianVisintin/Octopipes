@@ -8,7 +8,6 @@ jobs:
         - curl -L https://github.com/mozilla/grcov/releases/latest/download/grcov-linux-x86_64.tar.bz2 | tar jxf -
       script:
         - cd libs/rustypipes/
-        - export RUSTFLAGS="-Zprofile -Ccodegen-units=1 -Cinline-threshold=0 -Clink-dead-code -Coverflow-checks=off -Zno-landing-pads"
         - cargo build --verbose --all
         - cargo test --verbose --all -- --nocapture
         - export CARGO_INCREMENTAL=0
@@ -31,8 +30,6 @@ jobs:
         - make install DESTDIR=./out/
         - ./test_parser
         - ./test_client -t /tmp/pipe_tx -r /tmp/pipe_rx -c /tmp/pipe_cap
-      after_success:
-        - bash <(curl -s https://codecov.io/bash)
     - stage: "liboctopipes-minGW"
       language: c
       os: windows
@@ -58,8 +55,6 @@ jobs:
         - make install DESTDIR=./out/
         - ./test_parserpp
         - ./test_clientpp -t /tmp/pipecpp_tx -r /tmp/pipecpp_rx -c /tmp/pipecpp_cap
-      after_success:
-        - bash <(curl -s https://codecov.io/bash)
     - stage: "liboctopipespp-minGW"
       language: cpp
       os: windows
