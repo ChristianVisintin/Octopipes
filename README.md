@@ -6,7 +6,7 @@ Just an IPC server based on pipes.
 
 Developed by *Christian Visintin*
 
-Currently under development
+Currently under development (Scheduled release: February 2020)
 
 ---
 
@@ -31,9 +31,9 @@ Currently under development
   - [Octopipes Protocol](#octopipes-protocol)
     - [Payload Syntax](#payload-syntax)
     - [Common Access Pipe Protocol](#common-access-pipe-protocol)
-      - [Subscribe](#subscribe)
+      - [Subscribption](#subscribption)
       - [Assignment](#assignment)
-      - [Unsubscribe](#unsubscribe)
+      - [Unsubscribtion](#unsubscribtion)
       - [CAP Errors](#cap-errors)
   - [Know Issues](#know-issues)
   - [Contributing](#contributing)
@@ -345,13 +345,13 @@ The CAP requires a special sub-protocol to communicate properly with octopipes s
 Since the CAP is unique, if multiple clients tries at the same time to read the CAP (which is anyway very uncommon), the client which received a wrong packet must ignore the incoming packet and return and error.
 Each Message has a different payload, let's see the them in details:
 
-#### Subscribe
+#### Subscribption
 
-The subscribe packet is sent by the host to the server and it’s the request of subscribing to octopipes server. The server will respond with an ASSIGNMENT packet. It can also be used as a resubscription to new groups. It’s important to understand processes are groups too. Each process is subscribed implicitly to its group. The process name used is the one set in the packet at LND.
+The subscription packet is sent by the host to the server and it’s the request of subscribing to octopipes server. The server will respond with an ASSIGNMENT packet. It can also be used as a resubscription to new groups. It’s important to understand processes are groups too. Each process is subscribed implicitly to its group. The process name used is the one set in the packet at LND.
 
 | Name | Syntax | Length (bytes) | Description                                                                                                                                                          |
 |------|--------|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| OBJ  | 0x01   | 1              | **Object**: Indicates this is a SUBSCRIBE message                                                                                                                    |
+| OBJ  | 0x01   | 1              | **Object**: Indicates this is a SUBSCRIPTION message                                                                                                                    |
 | GRP  | uint8  | 1              | **Groups**: amount of groups the node is registered to. After this record a GRP amount of GSZn and GNMn rows follow. If GRP is 0, no other GSZn/GNMn record follows. |
 | GSZn | uint8  | 1              | **Group Size n**: Describes the size of group n name (1 => GRP)                                                                                                      |
 | GNMn | char   | GSZn           | Group name: Describes the group name the host is registered to. *The group name mustn’t include the null terminator, which must be added by the parser*              |
@@ -369,13 +369,13 @@ The assignment packet is transmitted by the server to the client after a subscri
 | LRX  | uint8  | 1              | **Length RX Pipe**: Length of PRX field                                                   |
 | PRX  | char   | LRX            | **PRX**: RX Pipe file path                                                                |
 
-#### Unsubscribe
+#### Unsubscribtion
 
 Tells the server the client has unsubscribed from Octopipes
 
 | Name | Syntax | Length (bytes) | Description                                          |
 |------|--------|----------------|------------------------------------------------------|
-| OBJ  | 0x02   | 1              | **Object**: Indicates this is an UNSUBSCRIBE message |
+| OBJ  | 0x02   | 1              | **Object**: Indicates this is an UNSUBSCRIPTION message |
 
 #### CAP Errors
 
