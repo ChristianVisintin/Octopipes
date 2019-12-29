@@ -12,10 +12,10 @@ Currently under development (Scheduled release: February 2020)
 
 - [Octopipes](#octopipes)
   - [Introduction](#introduction)
+    - [How it works](#how-it-works)
   - [Supported platforms and Requirements](#supported-platforms-and-requirements)
     - [Server Requirements](#server-requirements)
     - [Client libraries](#client-libraries)
-  - [How it works](#how-it-works)
   - [Build](#build)
     - [liboctopipes](#liboctopipes)
     - [liboctopipespp](#liboctopipespp)
@@ -41,6 +41,26 @@ These are the main features Octopipes provides:
 - Message exchanging between individual processes and groups
 - Free data format
 
+### How it works
+
+Before talking of the working flow of Octopipes let's introduce what Octopipes is.
+Octopipes is, indeed, an IPC server which takes care of:
+
+- Listening for incoming client subscription requests.
+- Assigning to each client two named pipes, one for transmission and one for reception.
+- Listening on client TX pipe and dispatch the messages to their recipients through their RX pipe.
+
+Octopipes working flow is pretty much simple and consists of a 4 steps lifecycle.
+
+1. Subscription
+2. Assignment
+3. IPC
+4. Unsubscription
+
+Each client can subscribe to groups or other clients for receiving messages associated to that node. The client, once subscribed, receives a pipes where to listen for incoming messages and one where to transmit to other clients.
+
+The entire protocol ruleset/workflow/reference can be found [here](docs/protocol.md)
+
 ## Supported platforms and Requirements
 
 Supported Operating Systems:
@@ -60,26 +80,6 @@ Supported Operating Systems:
 | C        | liboctopipes   | C compiler (GNU gcc, Clang), CMake   | GNU Linux, MacOS, Windows (MinGW **not yet**) | <https://github.com/ChristianVisintin/Octopipes> |
 | C++      | liboctopipespp | C++ compiler (GNU g++, Clang), CMake | GNU Linux, MacOS, Windows (MinGW **not yet**) | <https://github.com/ChristianVisintin/Octopipes> |
 | Rust     | rustypipes     | rustc, cargo                         | GNU Linux, MacOS, Windows                     | <https://github.com/ChristianVisintin/Octopipes> |
-
-## How it works
-
-Before talking of the working flow of Octopipes let's introduce what Octopipes is.
-Octopipes is, indeed, an IPC server which takes care of:
-
-- Listening for incoming client subscription requests.
-- Assigning to each client two named pipes, one for transmission and one for reception.
-- Listening on client TX pipe and dispatch the messages to their recipients through their RX pipe.
-
-Octopipes working flow is pretty much simple and consists of a 4 steps lifecycle.
-
-1. Subscription
-2. Assignment
-3. IPC
-4. Unsubscription
-
-Each client can subscribe to groups or other clients for receiving messages associated to that node. The client, once subscribed, receives a pipes where to listen for incoming messages and one where to transmit to other clients.
-
-The entire protocol ruleset/workflow/reference can be found [here](docs/protocol.md)
 
 ## Build
 
