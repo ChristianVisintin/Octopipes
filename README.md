@@ -23,6 +23,7 @@ Currently under development (Scheduled release: February 2020)
   - [Client implementation](#client-implementation)
   - [Octopipes Protocol](#octopipes-protocol)
   - [Know Issues](#know-issues)
+  - [Upcoming features](#upcoming-features)
   - [Contributing](#contributing)
   - [Changelog](#changelog)
   - [License](#license)
@@ -120,6 +121,11 @@ cargo install
 [Here](docs/protocol.md) You can find the entire Protocol reference.
 
 ## Know Issues
+
+## Upcoming features
+
+- Windows support
+- OctoNetworks (IPC between multiple Octopipes hosts)
 
 ## Contributing
 
