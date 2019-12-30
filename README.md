@@ -1,6 +1,6 @@
 # Octopipes
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-teal.svg)](https://opensource.org/licenses/MIT) [![HitCount](http://hits.dwyl.io/ChristianVisintin/Octopipes.svg)](http://hits.dwyl.io/ChristianVisintin/Octopipes) [![Stars](https://img.shields.io/github/stars/ChristianVisintin/Octopipes.svg)](https://github.com/ChristianVisintin/Octopipes) [![Issues](https://img.shields.io/github/issues/ChristianVisintin/Octopipes.svg)](https://github.com/ChristianVisintin/Octopipes) [![Build](https://api.travis-ci.org/ChristianVisintin/Octopipes.svg?branch=master)](https://travis-ci.org/ChristianVisintin/Octopipes) [![codecov](https://codecov.io/gh/ChristianVisintin/Octopipes/branch/master/graph/badge.svg)](https://codecov.io/gh/ChristianVisintin/Octopipes)
+[![License: MIT](https://img.shields.io/badge/License-MIT-teal.svg)](https://opensource.org/licenses/MIT) [![Stars](https://img.shields.io/github/stars/ChristianVisintin/Octopipes.svg)](https://github.com/ChristianVisintin/Octopipes) [![Issues](https://img.shields.io/github/issues/ChristianVisintin/Octopipes.svg)](https://github.com/ChristianVisintin/Octopipes) [![Build](https://api.travis-ci.org/ChristianVisintin/Octopipes.svg?branch=master)](https://travis-ci.org/ChristianVisintin/Octopipes) [![codecov](https://codecov.io/gh/ChristianVisintin/Octopipes/branch/master/graph/badge.svg)](https://codecov.io/gh/ChristianVisintin/Octopipes)
 
 Just an IPC server based on pipes.
 
@@ -13,11 +13,12 @@ Currently under development (Scheduled release: February 2020)
 - [Octopipes](#octopipes)
   - [Introduction](#introduction)
     - [How it works](#how-it-works)
-  - [Supported platforms and Requirements](#supported-platforms-and-requirements)
+  - [Octopipes Server](#octopipes-server)
+    - [Supported platforms and Requirements](#supported-platforms-and-requirements)
     - [Server Requirements](#server-requirements)
-    - [Octopipes libraries](#octopipes-libraries)
-  - [Client implementation](#client-implementation)
-  - [Server implementation](#server-implementation)
+  - [Octopipes libraries](#octopipes-libraries)
+    - [Client implementation](#client-implementation)
+    - [Server implementation](#server-implementation)
   - [Octopipes Protocol](#octopipes-protocol)
   - [Know Issues](#know-issues)
   - [Upcoming features](#upcoming-features)
@@ -58,7 +59,11 @@ Each client can subscribe to groups or other clients for receiving messages asso
 
 The entire protocol ruleset/workflow/reference can be found [here](docs/protocol.md)
 
-## Supported platforms and Requirements
+---
+
+## Octopipes Server
+
+### Supported platforms and Requirements
 
 Supported Operating Systems:
 
@@ -70,7 +75,9 @@ Supported Operating Systems:
 - Rust compiler
 - Cargo
 
-### Octopipes libraries
+---
+
+## Octopipes libraries
 
 | Language | Library        | Requirements                         | Supported Platforms                           | Repository                                       |
 |----------|----------------|--------------------------------------|-----------------------------------------------|--------------------------------------------------|
@@ -78,46 +85,58 @@ Supported Operating Systems:
 | C++      | liboctopipespp | C++ compiler (GNU g++, Clang), CMake | GNU Linux, MacOS, Windows (MinGW **not yet**) | <https://github.com/ChristianVisintin/Octopipes> |
 | Rust     | rustypipes     | rustc, cargo                         | GNU Linux, MacOS, Windows                     | <https://github.com/ChristianVisintin/Octopipes> |
 
-## Client implementation
+### Client implementation
 
 Here you can find how to implement an Octopipes Client by language:
 
 - **C**
   - [liboctopipes](libs/liboctopipes/README.md)
 - **C++**
-  - [liboctopipespp](libs/libsoctopipespp/README.md)
+  - [liboctopipespp](libs/liboctopipespp/README.md)
 - **Rust**
   - [rustypipes](libs/rustypipes/README.md)
 
-## Server implementation
+### Server implementation
 
 Here you can find how to implement an Octopipes Server by language:
 
 - **C**
   - [liboctopipes](libs/liboctopipes/README.md)
 - **C++**
-  - [liboctopipespp](libs/libsoctopipespp/README.md)
+  - [liboctopipespp](libs/liboctopipespp/README.md)
 - **Rust**
   - [rustypipes](libs/rustypipes/README.md)
 
 [Here](docs/server.md) You can find all server implementation for each library supported.
 
+---
+
 ## Octopipes Protocol
 
 [Here](docs/protocol.md) You can find the entire Protocol reference.
 
+---
+
 ## Know Issues
+
+---
 
 ## Upcoming features
 
 - Windows support
 - OctoNetworks (IPC between multiple Octopipes hosts)
 
+---
+
 ## Contributing
 
 TBD
 
+---
+
 ## Changelog
+
+---
 
 ## License
 
