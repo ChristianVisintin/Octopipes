@@ -53,6 +53,7 @@ In addition to these steps, the protocol has also a set of rules for both client
 3. The server must track subscriptions for each client which has subscribed.
 4. For each subscription which has been accepted, the server must prepare a TX pipe and a RX pipe, once created the server must start a worker which will listen for incoming messages on the TX pipe (the TX pipe is where the client writes).
 5. For each message received from a client, the server must check each client's subscritpion list and send the message to each client subscribed to the remote described in the message received from the client.
+6. By convention the two pipes provided to the client will have as name ```{client_name}_rx``` and ```{client_name}_tx```; it is possible to add ```.pipe``` or ```.fifo``` to the file name.
 
 ### The Subscription Step
 
