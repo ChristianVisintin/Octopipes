@@ -15,12 +15,13 @@ Currently under development (Scheduled release: February 2020)
     - [How it works](#how-it-works)
   - [Supported platforms and Requirements](#supported-platforms-and-requirements)
     - [Server Requirements](#server-requirements)
-    - [Client libraries](#client-libraries)
+    - [Octopipes libraries](#octopipes-libraries)
   - [Build](#build)
     - [liboctopipes](#liboctopipes)
     - [liboctopipespp](#liboctopipespp)
     - [rustypipes](#rustypipes)
   - [Client implementation](#client-implementation)
+  - [Server implementation](#server-implementation)
   - [Octopipes Protocol](#octopipes-protocol)
   - [Know Issues](#know-issues)
   - [Upcoming features](#upcoming-features)
@@ -73,7 +74,7 @@ Supported Operating Systems:
 - Rust compiler
 - Cargo
 
-### Client libraries
+### Octopipes libraries
 
 | Language | Library        | Requirements                         | Supported Platforms                           | Repository                                       |
 |----------|----------------|--------------------------------------|-----------------------------------------------|--------------------------------------------------|
@@ -115,6 +116,10 @@ cargo install
 ## Client implementation
 
 [Here](docs/clients.md) You can find all clients implementation for each library supported.
+
+## Server implementation
+
+[Here](docs/server.md) You can find all server implementation for each library supported.
 
 ## Octopipes Protocol
 
