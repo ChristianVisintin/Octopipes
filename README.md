@@ -16,10 +16,6 @@ Currently under development (Scheduled release: February 2020)
   - [Supported platforms and Requirements](#supported-platforms-and-requirements)
     - [Server Requirements](#server-requirements)
     - [Octopipes libraries](#octopipes-libraries)
-  - [Build](#build)
-    - [liboctopipes](#liboctopipes)
-    - [liboctopipespp](#liboctopipespp)
-    - [rustypipes](#rustypipes)
   - [Client implementation](#client-implementation)
   - [Server implementation](#server-implementation)
   - [Octopipes Protocol](#octopipes-protocol)
@@ -82,42 +78,27 @@ Supported Operating Systems:
 | C++      | liboctopipespp | C++ compiler (GNU g++, Clang), CMake | GNU Linux, MacOS, Windows (MinGW **not yet**) | <https://github.com/ChristianVisintin/Octopipes> |
 | Rust     | rustypipes     | rustc, cargo                         | GNU Linux, MacOS, Windows                     | <https://github.com/ChristianVisintin/Octopipes> |
 
-## Build
-
-### liboctopipes
-
-```sh
-cd libs/liboctopipes/
-mkdir build/
-cd build/
-cmake ..
-make
-make install
-```
-
-### liboctopipespp
-
-```sh
-cd libs/liboctopipespp/
-mkdir build/
-cd build/
-cmake ..
-make
-make install
-```
-
-### rustypipes
-
-```sh
-cargo build
-cargo install
-```
-
 ## Client implementation
 
-[Here](docs/clients.md) You can find all clients implementation for each library supported.
+Here you can find how to implement an Octopipes Client by language:
+
+- **C**
+  - [liboctopipes](libs/liboctopipes/README.md)
+- **C++**
+  - [liboctopipespp](libs/libsoctopipespp/README.md)
+- **Rust**
+  - [rustypipes](libs/rustypipes/README.md)
 
 ## Server implementation
+
+Here you can find how to implement an Octopipes Server by language:
+
+- **C**
+  - [liboctopipes](libs/liboctopipes/README.md)
+- **C++**
+  - [liboctopipespp](libs/libsoctopipespp/README.md)
+- **Rust**
+  - [rustypipes](libs/rustypipes/README.md)
 
 [Here](docs/server.md) You can find all server implementation for each library supported.
 
