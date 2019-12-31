@@ -11,7 +11,7 @@ jobs:
       script:
         - cd libs/rustypipes/
         - cargo build --verbose --all
-        - cargo test --verbose --all -- --nocapture
+        - cargo test --verbose --lib -- --nocapture
       after_success: |
         kcov --exclude-pattern=/.cargo,/usr/lib --verify target/cov target/debug/rustypipes-* &&
         bash <(curl -s https://codecov.io/bash) &&
