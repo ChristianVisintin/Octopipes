@@ -51,9 +51,10 @@ In addition to these steps, the protocol has also a set of rules for both client
 1. The server at start, must create and open the CAP.
 2. The server must be always listening for incoming messages on the CAP. When a message is received on the CAP the server must parse the client request and, if it is a valid request, it must try to satisfy it. Once the request has been worked, the server must reply to the client (unless for unsubscriptions).
 3. The server must track subscriptions for each client which has subscribed.
-4. For each subscription which has been accepted, the server must prepare a TX pipe and a RX pipe, once created the server must start a worker which will listen for incoming messages on the TX pipe (the TX pipe is where the client writes).
+4. For each subscription which has been accepted, the server must prepare a TX pipe and a RX pipe, once created, the server must start a worker which will listen for incoming messages on the TX pipe (the TX pipe is where the client writes).
 5. For each message received from a client, the server must check each client's subscritpion list and send the message to each client subscribed to the remote described in the message received from the client.
 6. By convention the two pipes provided to the client will have as name ```{client_name}_rx``` and ```{client_name}_tx```; it is possible to add ```.pipe``` or ```.fifo``` to the file name.
+7. The server must refuse a subscription from a client already subscribed (which hasn't unsubscribed). **For that reason using client ids with salt should be preferred and groups should be preferred over client ids.**
 
 ### The Subscription Step
 
@@ -62,6 +63,8 @@ What are groups and what are processes? Well, actually they're the same thing fo
 
 - **Process**: A process is a client, it identifies itself with an ASCII id. Each process is **implicitly** subscribed to itself and can be subscribed to other groups or processes.
 - **Group**: A group is a shared name used by different processes to share messages with more than one process (or even none). A process should not expect any response when using groups. Groups should be used to notify other process of something, more than to communicate (communication: answer and response).
+
+One of the biggest problem encountered during the development of Octopipes was the fact that a server must refuse a subscription from an already subscribed client, so what happens if my client has died and retries to reconnect? Well, it's a good practice that if the server has a packet for the died client, at fail of sending the message to the client it unsubscribes the dead client, but it's not obvious that a message is sent to that client nor the client is listening. Because of that the only solution found was to encourage the use of client id with a fixed part and a random salt (e.g. myprocess-as13dHegf) which changes at each startup of the client. Since the name is partially random, the developer should use groups instead of processes as recipient for their payload.
 
 ### The Assignment Step
 

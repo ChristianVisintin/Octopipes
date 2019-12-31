@@ -125,6 +125,8 @@ Here you can find how to implement an Octopipes Server by language:
 
 - Windows support
 - OctoNetworks (IPC between multiple Octopipes hosts)
+- New CAP messages:
+  - Get clients
 
 ---
 
