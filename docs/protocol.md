@@ -10,11 +10,11 @@ Protocol Reference V1
     - [The Subscription Step](#the-subscription-step)
     - [The Assignment Step](#the-assignment-step)
     - [The IPC Step](#the-ipc-step)
-    - [The Unsubscribption Step](#the-unsubscribption-step)
+    - [The Unsubscription Step](#the-unsubscription-step)
     - [Entire lifecycle](#entire-lifecycle)
   - [Payload Syntax](#payload-syntax)
   - [Common Access Pipe Protocol](#common-access-pipe-protocol)
-    - [Subscribption](#subscribption)
+    - [Subscription](#subscription)
     - [Assignment](#assignment)
     - [Unsubscribtion](#unsubscribtion)
     - [CAP Errors](#cap-errors)
@@ -27,7 +27,7 @@ The protocol implements a workflow of 4 steps, each one is described in detail i
 - [Subscription](#the-subscription-step)
 - [Assignment](#the-assignment-step)
 - [IPC](#the-ipc-step)
-- [Unsubscription](#the-unsubscribption-step)
+- [Unsubscription](#the-unsubscription-step)
 
 In addition to these steps, the protocol has also a set of rules for both client and servers.
 
@@ -76,7 +76,7 @@ The assignment step, which is carried by the server, consists in:
 The IPC step covers the entire time the client communicates with the other nodes.
 During this time the client doesn't use the CAP (unless it wants to change its subscriptions, but in that case it would just restart from the subscription step).
 
-### The Unsubscribption Step
+### The Unsubscription Step
 
 The unsubscription step is the last step in the lifecycle and consists in the client requesting to unsubscribe. These are the sub steps of the unsubscription process:
 
@@ -138,7 +138,7 @@ The CAP requires a special sub-protocol to communicate properly with octopipes s
 Since the CAP is unique, if multiple clients tries at the same time to read the CAP (which is anyway very uncommon), the client which received a wrong packet must ignore the incoming packet and return and error.
 Each Message has a different payload, let's see the them in details:
 
-### Subscribption
+### Subscription
 
 The subscription packet is sent by the host to the server and it’s the request of subscribing to octopipes server. The server will respond with an ASSIGNMENT packet. It can also be used as a resubscription to new groups. It’s important to understand processes are groups too. Each process is subscribed implicitly to its group. The process name used is the one set in the packet at LND.
 

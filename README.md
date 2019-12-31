@@ -8,7 +8,7 @@ Developed by *Christian Visintin*
 
 Currently under development (Scheduled release: February 2020)
 
---
+---
 
 - [Octopipes](#octopipes)
   - [Introduction](#introduction)
@@ -26,7 +26,7 @@ Currently under development (Scheduled release: February 2020)
   - [Changelog](#changelog)
   - [License](#license)
 
---
+---
 
 ## Introduction
 
@@ -59,7 +59,7 @@ Each client can subscribe to groups or other clients for receiving messages asso
 
 The entire protocol ruleset/workflow/reference can be found [here](docs/protocol.md)
 
---
+---
 
 ## Octopipes Server
 
@@ -75,7 +75,7 @@ Supported Operating Systems:
 - Rust compiler
 - Cargo
 
---
+---
 
 ## Octopipes libraries
 
@@ -109,34 +109,34 @@ Here you can find how to implement an Octopipes Server by language:
 
 [Here](docs/server.md) You can find all server implementation for each library supported.
 
---
+---
 
 ## Octopipes Protocol
 
 [Here](docs/protocol.md) You can find the entire Protocol reference.
 
---
+---
 
 ## Know Issues
 
---
+---
 
 ## Upcoming features
 
 - Windows support
 - OctoNetworks (IPC between multiple Octopipes hosts)
 
---
+---
 
 ## Contributing
 
 TBD
 
---
+---
 
 ## Changelog
 
---
+---
 
 ## License
 
