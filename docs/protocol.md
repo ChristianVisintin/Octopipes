@@ -55,6 +55,7 @@ In addition to these steps, the protocol has also a set of rules for both client
 5. For each message received from a client, the server must check each client's subscritpion list and send the message to each client subscribed to the remote described in the message received from the client.
 6. By convention the two pipes provided to the client will have as name ```{client_name}_rx``` and ```{client_name}_tx```; it is possible to add ```.pipe``` or ```.fifo``` to the file name.
 7. The server must refuse a subscription from a client already subscribed (which hasn't unsubscribed). **For that reason using client ids with salt should be preferred and groups should be preferred over client ids.**
+8. The server should delete all the pipes in the pipes folder at startup before starting
 
 ### The Subscription Step
 
