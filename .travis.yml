@@ -16,9 +16,6 @@ jobs:
         kcov --exclude-pattern=/.cargo,/usr/lib --verify target/cov target/debug/rustypipes-* &&
         bash <(curl -s https://codecov.io/bash) &&
         echo "Uploaded code coverage"
-      deploy:
-        on:
-          tags: true
     - stage: "liboctopipes-linux"
       language: c
       dist: trusty
