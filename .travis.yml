@@ -28,7 +28,8 @@ jobs:
         - make
         - make install DESTDIR=./out/
         - ./test_parser
-        - ./test_client -t /tmp/pipe_tx -r /tmp/pipe_rx -c /tmp/pipe_cap
+        - ./test_pipes -t /tmp/pipe_tx -r /tmp/pipe_rx
+        - ./test_client -t /tmp/pipe_tx2 -r /tmp/pipe_rx2 -c /tmp/pipe_cap
     - stage: "liboctopipes-minGW"
       language: c
       os: windows
