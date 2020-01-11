@@ -3,7 +3,18 @@ name = "octopipes-clients"
 version = "0.1.0"
 authors = ["ChristianVisintin <christian.visintin1997@gmail.com>"]
 edition = "2018"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+license = "MIT"
+description = "Octopipes-clients provides two application to quickly send and receive message from an Octopipes server."
+homepage = "https://github.com/ChristianVisintin/Octopipes"
+repository = "https://github.com/ChristianVisintin/Octopipes"
 
 [dependencies]
+rustypipes = "0.1.0"
+
+[[bin]]
+name = "octopipes-send"
+path = "src/octopipes_send.rs"
+
+[[bin]]
+name = "octopipes-recv"
+path = "src/octopipes_recv.rs"

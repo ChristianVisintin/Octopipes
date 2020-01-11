@@ -3,7 +3,14 @@ name = "octopipes-server"
 version = "0.1.0"
 authors = ["ChristianVisintin <christian.visintin1997@gmail.com>"]
 edition = "2018"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+license = "MIT"
+description = "Octopipes-server is the official server to implement IPC based on the Octopipes Protocol."
+homepage = "https://github.com/ChristianVisintin/Octopipes"
+repository = "https://github.com/ChristianVisintin/Octopipes"
 
 [dependencies]
+rustypipes = "0.1.0"
+
+[[bin]]
+name = "octopipes-server"
+path = "src/octopipes.rs"
