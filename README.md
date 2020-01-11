@@ -90,22 +90,22 @@ Supported Operating Systems:
 Here you can find how to implement an Octopipes Client by language:
 
 - **C**
-  - [liboctopipes](libs/liboctopipes/README.md)
+  - [liboctopipes](libs/liboctopipes/README.md#client-implementation)
 - **C++**
-  - [liboctopipespp](libs/liboctopipespp/README.md)
+  - [liboctopipespp](libs/liboctopipespp/README.md#client-implementation)
 - **Rust**
-  - [rustypipes](libs/rustypipes/README.md)
+  - [rustypipes](libs/rustypipes/README.md#client-implementation)
 
 ### Server implementation
 
 Here you can find how to implement an Octopipes Server by language:
 
 - **C**
-  - [liboctopipes](libs/liboctopipes/README.md)
+  - [liboctopipes](libs/liboctopipes/README.md#server-implementation)
 - **C++**
-  - [liboctopipespp](libs/liboctopipespp/README.md)
+  - [liboctopipespp](libs/liboctopipespp/README.md#server-implementation)
 - **Rust**
-  - [rustypipes](libs/rustypipes/README.md)
+  - [rustypipes](libs/rustypipes/README.md#server-implementation)
 
 ---
 
