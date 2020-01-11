@@ -1,6 +1,7 @@
 [workspace]
 
 members = [
-  "octopipes",
+  "octopipes-server",
+  "octopipes-clients",
   "libs/rustypipes"
 ]

@@ -13,9 +13,13 @@ Currently under development (Scheduled release: February 2020)
 - [Octopipes](#octopipes)
   - [Introduction](#introduction)
     - [How it works](#how-it-works)
+  - [Project Tree](#project-tree)
   - [Octopipes Server](#octopipes-server)
     - [Supported platforms and Requirements](#supported-platforms-and-requirements)
     - [Server Requirements](#server-requirements)
+    - [Quick Setup](#quick-setup)
+    - [Configuration](#configuration)
+    - [Run Octopipes in a container with Docker](#run-octopipes-in-a-container-with-docker)
   - [Octopipes libraries](#octopipes-libraries)
     - [Client implementation](#client-implementation)
     - [Server implementation](#server-implementation)
@@ -61,6 +65,16 @@ The entire protocol ruleset/workflow/reference can be found [here](docs/protocol
 
 ---
 
+## Project Tree
+
+- root
+  - docs: Octopipes documentation pages
+  - libs: [official Octopipes libraries](#octopipes-libraries))
+  - octopipes-clients: Test clients to quickly send to and listen for messages from your octopipes server
+  - octopipes-server: contains the Octopipes Server
+
+---
+
 ## Octopipes Server
 
 ### Supported platforms and Requirements
@@ -75,15 +89,29 @@ Supported Operating Systems:
 - Rust compiler
 - Cargo
 
+### Quick Setup
+
+TODO:
+
+### Configuration
+
+TODO:
+
+### Run Octopipes in a container with Docker
+
+TODO:
+
 ---
 
 ## Octopipes libraries
 
-| Language | Library        | Requirements                         | Supported Platforms                           | Repository                                       |
-|----------|----------------|--------------------------------------|-----------------------------------------------|--------------------------------------------------|
-| C        | liboctopipes   | C compiler (GNU gcc, Clang), CMake   | GNU Linux, MacOS, Windows (MinGW **not yet**) | <https://github.com/ChristianVisintin/Octopipes> |
-| C++      | liboctopipespp | C++ compiler (GNU g++, Clang), CMake | GNU Linux, MacOS, Windows (MinGW **not yet**) | <https://github.com/ChristianVisintin/Octopipes> |
-| Rust     | rustypipes     | rustc, cargo                         | GNU Linux, MacOS, Windows                     | <https://github.com/ChristianVisintin/Octopipes> |
+Here follows a list of all the available libraries to implement Octopipes clients and servers
+
+| Language | Library        | Requirements                         | Supported Platforms                           | Server/Client | Repository                                       |
+|----------|----------------|--------------------------------------|-----------------------------------------------|---------------|--------------------------------------------------|
+| C        | liboctopipes   | C compiler (GNU gcc, Clang), CMake   | GNU Linux, MacOS, Windows (MinGW **not yet**) | Both          | <https://github.com/ChristianVisintin/Octopipes> |
+| C++      | liboctopipespp | C++ compiler (GNU g++, Clang), CMake | GNU Linux, MacOS, Windows (MinGW **not yet**) | Both          | <https://github.com/ChristianVisintin/Octopipes> |
+| Rust     | rustypipes     | rustc, cargo                         | GNU Linux, MacOS, Windows                     | Both          | <https://github.com/ChristianVisintin/Octopipes> |
 
 ### Client implementation
 
