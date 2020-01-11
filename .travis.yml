@@ -55,6 +55,7 @@ jobs:
         - make install DESTDIR=./out/
         - ./test_parserpp
         - ./test_clientpp -t /tmp/pipecpp_tx -r /tmp/pipecpp_rx -c /tmp/pipecpp_cap
+        - ./test_serverpp -c /tmp/server_cap -d /tmp/clients/
     - stage: "liboctopipespp-minGW"
       language: cpp
       os: windows

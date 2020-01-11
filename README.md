@@ -107,8 +107,6 @@ Here you can find how to implement an Octopipes Server by language:
 - **Rust**
   - [rustypipes](libs/rustypipes/README.md)
 
-[Here](docs/server.md) You can find all server implementation for each library supported.
-
 ---
 
 ## Octopipes Protocol
