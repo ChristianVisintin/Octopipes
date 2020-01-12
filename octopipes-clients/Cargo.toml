@@ -1,6 +1,6 @@
 [package]
 name = "octopipes-clients"
-version = "0.1.0"
+version = "1.0.0"
 authors = ["ChristianVisintin <christian.visintin1997@gmail.com>"]
 edition = "2018"
 license = "MIT"
@@ -9,7 +9,10 @@ homepage = "https://github.com/ChristianVisintin/Octopipes"
 repository = "https://github.com/ChristianVisintin/Octopipes"
 
 [dependencies]
-rustypipes = "0.1.0"
+rustypipes = "0.1.1"
+getopts = "0.2.21"
+rand = "0.7.3"
+ctrlc = "3.1.3"
 
 [[bin]]
 name = "octopipes-send"
