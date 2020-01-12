@@ -9,7 +9,7 @@ homepage = "https://github.com/ChristianVisintin/Octopipes"
 repository = "https://github.com/ChristianVisintin/Octopipes"
 
 [dependencies]
-rustypipes = "0.1.0"
+rustypipes = "0.1.1"
 
 [[bin]]
 name = "octopipes-server"

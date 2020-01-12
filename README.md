@@ -15,11 +15,7 @@ Currently under development (Scheduled release: February 2020)
     - [How it works](#how-it-works)
   - [Project Tree](#project-tree)
   - [Octopipes Server](#octopipes-server)
-    - [Supported platforms and Requirements](#supported-platforms-and-requirements)
-    - [Server Requirements](#server-requirements)
-    - [Quick Setup](#quick-setup)
-    - [Configuration](#configuration)
-    - [Run Octopipes in a container with Docker](#run-octopipes-in-a-container-with-docker)
+  - [Octopipes Clients](#octopipes-clients)
   - [Octopipes libraries](#octopipes-libraries)
     - [Client implementation](#client-implementation)
     - [Server implementation](#server-implementation)
@@ -77,29 +73,17 @@ The entire protocol ruleset/workflow/reference can be found [here](docs/protocol
 
 ## Octopipes Server
 
-### Supported platforms and Requirements
+You can find the entire Octopipes Server documentation [Here](octopipes-server/README.md)
 
-Supported Operating Systems:
+## Octopipes Clients
 
-- GNU Linux
-- MacOS
+Octopipes comes with two clients, one to send and one to receive messages.
+The clients are provided both with liboctopipes and with the cargo crate octopipes-clients.
 
-### Server Requirements
+For more details:
 
-- Rust compiler
-- Cargo
-
-### Quick Setup
-
-TODO:
-
-### Configuration
-
-TODO:
-
-### Run Octopipes in a container with Docker
-
-TODO:
+- [octopipes-clients](octopipes-clients/README.md)
+- [C-clients](libs/liboctopipes/README.md)
 
 ---
 
