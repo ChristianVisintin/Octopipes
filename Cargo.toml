@@ -2,6 +2,5 @@
 
 members = [
   "octopipes-server",
-  "octopipes-clients",
-  "libs/rustypipes"
+  "octopipes-clients"
 ]

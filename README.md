@@ -17,8 +17,6 @@ Currently under development (Scheduled release: February 2020)
   - [Octopipes Server](#octopipes-server)
   - [Octopipes Clients](#octopipes-clients)
   - [Octopipes libraries](#octopipes-libraries)
-    - [Client implementation](#client-implementation)
-    - [Server implementation](#server-implementation)
   - [Octopipes Protocol](#octopipes-protocol)
   - [Know Issues](#know-issues)
   - [Upcoming features](#upcoming-features)
@@ -93,31 +91,9 @@ Here follows a list of all the available libraries to implement Octopipes client
 
 | Language | Library        | Requirements                         | Supported Platforms                           | Server/Client | Repository                                       |
 |----------|----------------|--------------------------------------|-----------------------------------------------|---------------|--------------------------------------------------|
-| C        | liboctopipes   | C compiler (GNU gcc, Clang), CMake   | GNU Linux, MacOS, Windows (MinGW **not yet**) | Both          | <https://github.com/ChristianVisintin/Octopipes> |
-| C++      | liboctopipespp | C++ compiler (GNU g++, Clang), CMake | GNU Linux, MacOS, Windows (MinGW **not yet**) | Both          | <https://github.com/ChristianVisintin/Octopipes> |
-| Rust     | rustypipes     | rustc, cargo                         | GNU Linux, MacOS, Windows                     | Both          | <https://github.com/ChristianVisintin/Octopipes> |
-
-### Client implementation
-
-Here you can find how to implement an Octopipes Client by language:
-
-- **C**
-  - [liboctopipes](libs/liboctopipes/README.md#client-implementation)
-- **C++**
-  - [liboctopipespp](libs/liboctopipespp/README.md#client-implementation)
-- **Rust**
-  - [rustypipes](libs/rustypipes/README.md#client-implementation)
-
-### Server implementation
-
-Here you can find how to implement an Octopipes Server by language:
-
-- **C**
-  - [liboctopipes](libs/liboctopipes/README.md#server-implementation)
-- **C++**
-  - [liboctopipespp](libs/liboctopipespp/README.md#server-implementation)
-- **Rust**
-  - [rustypipes](libs/rustypipes/README.md#server-implementation)
+| C        | liboctopipes   | C compiler (GNU gcc, Clang), CMake   | GNU Linux, MacOS, Windows (MinGW **not yet**) | Both          | <https://github.com/ChristianVisintin/liboctopipes> |
+| C++      | liboctopipespp | C++ compiler (GNU g++, Clang), CMake | GNU Linux, MacOS, Windows (MinGW **not yet**) | Both          | <https://github.com/ChristianVisintin/liboctopipes> |
+| Rust     | rustypipes     | rustc, cargo                         | GNU Linux, MacOS, Windows                     | Both          | <https://github.com/ChristianVisintin/Rustypipes> |
 
 ---
 

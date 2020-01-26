@@ -1,69 +1,28 @@
-jobs:
-  include:
-    - stage: "rustypipes"
-      language: rust
-      rust: stable
-      cache: cargo
-      addons:
-        apt:
-          packages:
-            - kcov
-      script:
-        - cd libs/rustypipes/
-        - cargo build --verbose --all
-        - cargo test --verbose --lib -- --nocapture
-      after_success: |
-        kcov --exclude-pattern=/.cargo,/usr/lib --verify target/cov target/debug/rustypipes-* &&
-        bash <(curl -s https://codecov.io/bash) &&
-        echo "Uploaded code coverage"
-    - stage: "liboctopipes-linux"
-      language: c
-      dist: trusty
-      compiler: gcc
-      os: linux
-      before_script:
-        - cd libs/liboctopipes/ && mkdir build/ && cd build/
-      script:
-        - cmake ..
-        - make
-        - make install DESTDIR=./out/
-        - ./test_parser
-        - ./test_pipes -t /tmp/pipe_tx -r /tmp/pipe_rx
-        - ./test_client -t /tmp/pipe_tx2 -r /tmp/pipe_rx2 -c /tmp/pipe_cap
-    - stage: "liboctopipes-minGW"
-      language: c
-      os: windows
-      compiler: gcc
-      before_script:
-        - cd libs/liboctopipes/
-        - mkdir build/
-        - cd build/
-      script:
-        - cmake .. -G "MinGW Makefiles" -DCMAKE_SH="CMAKE_SH-NOTFOUND"
-        - mingw32-make
-        - ./test_parser.exe
-    - stage: "liboctopipespp-linux"
-      language: cpp
-      dist: trusty
-      compiler: g++
-      os: linux
-      before_script:
-        - cd libs/liboctopipespp/ && mkdir build/ && cd build/
-      script:
-        - cmake ..
-        - make
-        - make install DESTDIR=./out/
-        - ./test_parserpp
-        - ./test_clientpp -t /tmp/pipecpp_tx -r /tmp/pipecpp_rx -c /tmp/pipecpp_cap
-        - ./test_serverpp -c /tmp/server_cap -d /tmp/clients/
-    - stage: "liboctopipespp-minGW"
-      language: cpp
-      os: windows
-      compiler: g++
-      before_script:
-        - cd libs/liboctopipespp/
-        - mkdir build/
-        - cd build/
-      script:
-        - cmake .. -G "MinGW Makefiles" -DCMAKE_SH="CMAKE_SH-NOTFOUND"
-        - mingw32-make
+language: rust
+sudo: required
+dist: trusty
+addons:
+  apt:
+    packages:
+      - libssl-dev
+cache: cargo
+rust:
+  - stable
+  - beta
+  - nightly
+matrix:
+  allow_failures:
+    - rust: nightly
+before_cache: |
+  if [[ "$TRAVIS_RUST_VERSION" == stable ]]; then
+    cargo install cargo-tarpaulin
+  fi
+script:
+- cargo clean
+- cargo build --verbose --all
+- cargo test --verbose --lib -- --nocapture
+after_success: |
+  if [[ "$TRAVIS_RUST_VERSION" == stable ]]; then
+    cargo tarpaulin --out Xml
+    bash <(curl -s https://codecov.io/bash)
+  fi
