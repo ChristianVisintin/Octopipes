@@ -1,6 +1,6 @@
 # Octopipes
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-teal.svg)](https://opensource.org/licenses/MIT) [![Stars](https://img.shields.io/github/stars/ChristianVisintin/Octopipes.svg)](https://github.com/ChristianVisintin/Octopipes) [![Issues](https://img.shields.io/github/issues/ChristianVisintin/Octopipes.svg)](https://github.com/ChristianVisintin/Octopipes) [![Build](https://api.travis-ci.org/ChristianVisintin/Octopipes.svg?branch=master)](https://travis-ci.org/ChristianVisintin/Octopipes) [![codecov](https://codecov.io/gh/ChristianVisintin/Octopipes/branch/master/graph/badge.svg)](https://codecov.io/gh/ChristianVisintin/Octopipes)
+[![License: MIT](https://img.shields.io/badge/License-MIT-teal.svg)](https://opensource.org/licenses/MIT) [![Stars](https://img.shields.io/github/stars/ChristianVisintin/Octopipes.svg)](https://github.com/ChristianVisintin/Octopipes) [![Issues](https://img.shields.io/github/issues/ChristianVisintin/Octopipes.svg)](https://github.com/ChristianVisintin/Octopipes) [![Build](https://api.travis-ci.org/ChristianVisintin/Octopipes.svg?branch=master)](https://travis-ci.org/ChristianVisintin/Octopipes)
 
 Just an IPC server based on pipes.
 
@@ -63,7 +63,6 @@ The entire protocol ruleset/workflow/reference can be found [here](docs/protocol
 
 - root
   - docs: Octopipes documentation pages
-  - libs: [official Octopipes libraries](#octopipes-libraries))
   - octopipes-clients: Test clients to quickly send to and listen for messages from your octopipes server
   - octopipes-server: contains the Octopipes Server
 
@@ -76,12 +75,11 @@ You can find the entire Octopipes Server documentation [Here](octopipes-server/R
 ## Octopipes Clients
 
 Octopipes comes with two clients, one to send and one to receive messages.
-The clients are provided both with liboctopipes and with the cargo crate octopipes-clients.
+The clients are provided both with [liboctopipes](https://github.com/ChristianVisintin/liboctopipes) and with the cargo crate octopipes-clients.
 
 For more details:
 
 - [octopipes-clients](octopipes-clients/README.md)
-- [C-clients](libs/liboctopipes/README.md)
 
 ---
 

@@ -1,0 +1,11 @@
+logging:
+  log_level: 1
+  log_file: "/var/log/octopipes/octopipes.log"
+  stdout: true
+
+pipes:
+  cap_path: "/tmp/octopipes/cap.pipe"
+  client_dir: "/tmp/octopipes/clients/"
+
+protocol:
+  version: 1
