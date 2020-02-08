@@ -52,7 +52,7 @@ pub struct ProtocolConfig {
     pub version: u8,
 }
 
-#[derive(Copy, Clone, PartialEq)]
+#[derive(Copy, Clone, PartialEq, fmt::Debug)]
 pub enum ConfigErrorCode {
     NoSuchFileOrDirectory,
     CouldNotReadFile,
@@ -223,24 +223,6 @@ impl ProtocolConfig {
         Ok(ProtocolConfig {
             version: protocol_version,
         })
-    }
-}
-
-//@! ConfigErrorCode
-
-impl ConfigErrorCode {
-    fn to_string(&self) -> &str {
-        match self {
-            ConfigErrorCode::CouldNotReadFile => "CouldNotReadFile",
-            ConfigErrorCode::NoSuchFileOrDirectory => "NoSuchFileOrDirectory",
-            ConfigErrorCode::YamlSyntaxError => "YamlSyntaxError"
-        }
-    }    
-}
-
-impl fmt::Debug for ConfigErrorCode {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "{}", self.to_string())
     }
 }
 

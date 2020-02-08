@@ -2,7 +2,8 @@
 
 [![Crates.io](https://img.shields.io/badge/crates.io-v1.0.0-orange.svg)](https://crates.io/crates/octopipes-server)
 
-Current Version: 1.0.0 (??/01/2020) ~ Built against rustypipes 0.1.1
+Current Version: 1.0.0 (??/02/2020) ~ Built against rustypipes 0.1.1
+
 Developed by *Christian Visintin*
 
 Octopipes-server is the official server to implement IPC based on the Octopipes Protocol.

@@ -50,26 +50,32 @@ fn main() {
         "C",
         "configuration file",
         "Specify the configuration YAML file",
-        "<YAML_FILE>",
+        "<config_yaml>",
     );
     opts.optopt("c", "cap-path", "Specify CAP path", "<CAP_PATH>");
     opts.optopt(
         "d",
         "client-dir",
         "Specify the client's pipes directory",
-        "<CLIENT_DIR>",
+        "<client_dir>",
     );
     opts.optopt(
         "l",
         "log-level",
         "Specify the server's log level (0: NONE, 1: DEBUG, 2: INFO, 3: WARN, 4: ERROR)",
-        "<LOG_LEVEL>",
+        "<log_level>",
     );
     opts.optopt(
         "L",
         "log-file",
         "Specify the server's log file",
-        "<LOG_FILE>",
+        "<log_file>",
+    );
+    opts.optopt(
+        "P",
+        "pidfile",
+        "Specify the file where the pidfile will be written",
+        "<pidfile>"
     );
     opts.optflag("h", "help", "print this help menu");
 }

@@ -2,7 +2,8 @@
 
 [![Crates.io](https://img.shields.io/badge/crates.io-v1.0.0-orange.svg)](https://crates.io/crates/octopipes-clients)
 
-Current Version: 1.0.0 (12/01/2020) ~ Built against rustypipes 0.1.1
+Current Version: 1.0.0 (??/02/2020) ~ Built against rustypipes 0.1.1
+
 Developed by *Christian Visintin*
 
 Octopipes-clients provides two application to quickly send and receive message from an Octopipes server.
